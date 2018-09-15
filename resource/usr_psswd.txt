@@ -1,2 +1,2 @@
-username
-passward
+write username in this line
+write password in this line
