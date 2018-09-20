@@ -17,7 +17,7 @@ public class NavigateFriend {
   private String bigText = "span[role='heading']";
   public String follow = "Default", unfollow = "Unfollow", seeFirst = "See First", unfriend = "unfriend";
   private int delayTime = 200;
-  private int bigDelayTime = 9000;
+  private int bigDelayTime = 6000;
 
   public NavigateFriend(WebDriver d) {
     driver = d;
@@ -115,7 +115,7 @@ public class NavigateFriend {
 
       driver.findElement(By.cssSelector(bigText)).click();
       driver.navigate().refresh();
-      Thread.sleep(delayTime);
+      Thread.sleep(bigDelayTime);
 
       if(driver.findElements(By.cssSelector(followCSS)).size() > 0 && driver.findElement(By.cssSelector(followCSS)).isDisplayed()){
         changed_status = follow;
