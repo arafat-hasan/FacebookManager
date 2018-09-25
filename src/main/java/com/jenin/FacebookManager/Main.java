@@ -43,6 +43,6 @@ public class Main {
     }else {
       System.out.println("Log in failed finaly, program aborted...");
     }
-    driver.close();
+    //driver.close();
   }
 }

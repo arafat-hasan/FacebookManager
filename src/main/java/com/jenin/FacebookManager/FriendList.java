@@ -28,13 +28,14 @@ public class FriendList {
   public void main(WebDriver driver, String list_url) {
     DEACTIVATED_ACC_URL = list_url + "#";
     File file = new File("Friend_list.xlsx");
+    String anim= "|/-\\";
     if(file.exists() && !file.isDirectory()) {
       System.out.println("Friend_list.xlsx already exists...Creating friend list aborted...");
       return ;
     }
 
     driver.navigate().to(list_url);
-    System.out.println("Building Friend List...");
+    //System.out.println("Building Friend List...");
 
     JavascriptExecutor js = (JavascriptExecutor) driver;
     int a = 0;
@@ -44,8 +45,10 @@ public class FriendList {
 
       if(a > 10000) break;
       a += 1;
+      String data = "\rBuilding Friend List  " + anim.charAt(a % anim.length());
+      System.out.print(data);
     }
-    System.out.println("Scrolling Done (" + a + ") ...");
+    System.out.println("\rScrolling Done (" + a + ") ...");
     List<WebElement> frnd_lst = driver.findElements(By.xpath("//div[@class='uiProfileBlockContent']/div/div[2]"));
     XSSFWorkbook workbook = new XSSFWorkbook();
     XSSFSheet sheet = workbook.createSheet("FriendList");
@@ -106,6 +109,8 @@ public class FriendList {
 
       //System.out.println("Name: "+name+"\tID: "+id+"\tLink: "+link);
       friendCNT++;
+      String data = "\rTotal " + + friendCNT+" profiles completed.   " + anim.charAt(friendCNT % anim.length());
+      System.out.print(data);
       row = sheet.createRow(rowNum++);
 
       cell = row.createCell(0);	cell.setCellStyle(cellStyle);	cell.setCellValue(id);
@@ -118,7 +123,7 @@ public class FriendList {
       cell = row.createCell(7);	cell.setCellStyle(cellStyle);	cell.setCellValue(timeStamp);
 
     }
-    System.out.println("\n\nFriend list generating done...\nTotal number of friends: "+friendCNT+"\n\n");
+    System.out.println("\nFriend list generating done...\nTotal number of friends: "+friendCNT);
     try {
       FileOutputStream outputStream = new FileOutputStream(file);
       workbook.write(outputStream);

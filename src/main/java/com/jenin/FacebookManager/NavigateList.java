@@ -66,7 +66,7 @@ public class NavigateList {
               newCurrStatus = tmp[1];
               if(id.equals("")) newID = tmp[2];
             }catch (Exception e) {
-              System.err.println("\nError occured when navigating profile '" + userID);
+              System.err.println("\nError occured when navigating profile '" + userID+"'");
               //              e.printStackTrace();
               errorInNavigate = true;
             }
