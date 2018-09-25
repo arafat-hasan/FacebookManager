@@ -16,8 +16,8 @@ public class NavigateFriend {
   private String seeFirstCSS = "button[data-status='see_first']";
   private String bigText = "span[role='heading']";
   public String follow = "Default", unfollow = "Unfollow", seeFirst = "See First", unfriend = "unfriend";
-  private int delayTime = 200;
-  private int bigDelayTime = 6000;
+  private int delayTime = 400;
+  private int bigDelayTime = 10000;
 
   public NavigateFriend(WebDriver d) {
     driver = d;
@@ -51,13 +51,13 @@ public class NavigateFriend {
     }
     String calledProfileID = profilePicUrl.substring(profilePicUrl.lastIndexOf("=")+1, profilePicUrl.length());
 
+
+
+
+    if(previous_status.equals(status)) 		return new String[]{ previous_status, status, calledProfileID };
+
     try {
-      Thread.sleep(bigDelayTime);
-
-
-      if(previous_status.equals(status)) 		return new String[]{ previous_status, status, calledProfileID };
-
-
+      //Thread.sleep(bigDelayTime);
       if(previous_status.equals(unfollow)) {
         if(status.equals(follow)) {
           driver.findElement(By.xpath("//a[@rel='async-post']")).click();

@@ -60,6 +60,8 @@ public class NavigateList {
 
             //System.out.println("preStatus: "+ preStatus + "\tcurrStatus: "+currStatus);
             Boolean errorInNavigate = false;
+
+            Thread.sleep(3000);
             try{
               String[] tmp = frnd.navigate(link, order);
               newPreStatus = tmp[0];
