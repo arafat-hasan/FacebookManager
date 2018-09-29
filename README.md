@@ -41,6 +41,12 @@ In `src/main/java/com/jenin/FacebookManager/NavigateFriend.java` file there is a
      * Headless drivers are used, it can be run in servers, using Jenkins, smoothly.
 * [Maven](https://maven.apache.org/)
 
+### Run Using Maven
+Maven run command:
+```sh
+mvn exec:java -Dexec.mainClass="com.jenin.FacebookManager.Main" -Dexec.cleanupDaemonThreads=false
+```
+
 
 ### Difficulties
 1. When it's browsed very fast, Facebook may block the user.
