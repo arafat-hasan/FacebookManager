@@ -20,8 +20,8 @@ public class Main {
     String list_url = new String("https://www.facebook.com/arafathasanjenin/friends");
     WebDriverManager.chromedriver().setup();
     ChromeOptions options = new ChromeOptions();       
-    // options.addArguments("--headless");
-    // options.addArguments("--disable-gpu");
+    options.addArguments("--headless");
+    options.addArguments("--disable-gpu");
     WebDriver driver = new ChromeDriver(options);
     driver.manage().window().maximize();
     Login login = new Login();
@@ -43,6 +43,6 @@ public class Main {
     }else {
       System.out.println("Log in failed finaly, program aborted...");
     }
-    //driver.close();
+    driver.close();
   }
 }

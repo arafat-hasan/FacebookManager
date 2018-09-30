@@ -36,6 +36,7 @@ public class NavigateList {
       NavigateFriend frnd = new NavigateFriend(driver);
       Row row = iterator.next();
       try {
+        int errCnt = 0;
         while (iterator.hasNext()) {
           row = iterator.next();
           String id  = row.getCell(0).getStringCellValue();
@@ -71,6 +72,11 @@ public class NavigateList {
               System.err.println("\nError occured when navigating profile '" + userID+"'");
               //              e.printStackTrace();
               errorInNavigate = true;
+              errCnt++;
+              if(errCnt > 25) {
+                System.err.println("More than 25 errors occured in navigate profiles...");
+                break;
+              }
             }
 
             if(errorInNavigate == false) {
