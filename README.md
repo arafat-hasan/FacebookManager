@@ -1,3 +1,10 @@
+> This project was created a long time ago. Since this software uses `xPath` of different elements of Facebook's web interface and Facebook's web interface has been changed in the meantime, it may no longer work properly. However, anyone interested can run it by simply changing the `xPaths` in the source code. And we warmly welcome those who are interested in contributing to this project.
+
+------
+
+
+
+
 # Facebook Manager
 
 This is a fancy project which builds an excel file containing a list of all Facebook friends and navigates all friends profile to follow or unfollow them as specified in that excel file.
@@ -14,7 +21,7 @@ The program can
 * Navigate every profile from the excel file, which `Change` column has the value `yes`.
 * Click on 'follow' or 'unfollow' button, as specified (If not specified, then 'follow').
 
- 
+
 Under the `resource` directory, there is a file named `usr_psswd.txt`, which have to contain facebook username/email in the first line and password in the second line. Write your Facebook username to the first line and password at the second line in this file. This file is used when logging in for the first time or if cookies are expired. In the `src/main/java/com/jenin/FacebookManager/Main.java ` file there is a variable named `firstName` which default value is `Arafat`, change it to your facebook first name, which displayed at the top when you log in to Facebook.
 
 When the program is run, an excel file named `Friend_list.xlsx` is created at the root of the project directory. The excel file contains 8 columns:
