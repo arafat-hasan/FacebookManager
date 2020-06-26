@@ -1,7 +1,4 @@
-> This project was created a long time ago. Since this software uses `xPath` of different elements of Facebook's web interface and Facebook's web interface has been changed in the meantime, it may no longer work properly. However, anyone interested can run it by simply changing the `xPaths` in the source code. And we warmly welcome those who are interested in contributing to this project.
-
-------
-
+ > :information_source: This project was created a long time ago. Since this software uses `xPath` of different elements of Facebook's web interface and Facebook's web interface has been changed in the meantime, it may no longer work properly. However, anyone interested can run it by simply changing the `xPaths` in the source code. And we warmly welcome those who are interested in contributing to this project.
 
 
 
@@ -72,5 +69,4 @@ mvn exec:java -Dexec.mainClass="com.jenin.FacebookManager.Main" -Dexec.cleanupDa
 2. Bring See_first option, it's not available now.
 3. Make a list of post likers/commenter with details information of the profiles.
 4. A robot which can reply with fixed text to the new messages.
-
 
